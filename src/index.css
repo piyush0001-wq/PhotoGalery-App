@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+:root {
+  --primary: #efb6b2;
+  --secondary: #414141;
+  --error: #ff4a4a;
+}
+
+/* base styles & title */
+
+body {
+  font-family: "Noto Serif";
+  color: var(--secondary);
+}
+
+.App {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.title h1 {
+  color: var(--secondary);
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  font-weight: normal;
+  text-align: center;
+  /* background: #414141; */
+}
+
+.title h1 span {
+  color: white;
+  background: var(--secondary);
+  padding: 0 5px;
+}
+
+.title h2, .title p {
+  text-align: center;
+}
+
+.title h2 {
+  margin-top: 60px;
+  font-size: 2.6rem;
+}
+
+/* upload form styles */
+
+form {
+  margin: 30px auto 10px;
+  text-align: center;
+  overflow: hidden;
+}
+
+label input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  margin: 10px auto;
+  /* line-height: 30px; */
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 35px;
+  align-items: center;
+}
+
+label:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.output {
+  height: 60px;
+  font-size: 0.8rem;
+}
+
+.error {
+  color: var(--error);
+}
+
+/* progress bar styles */
+
+.progress-bar {
+  height: 5px;
+  background: var(--primary);
+  margin-top: 20px;
+}
+
+/* image grid styles */
+
+.img-grid {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 80px;
+}
+
+.img-grid p {
+  z-index: 111;
+  position: relative;
+  display: flex;
+  margin: 90px 0px 0 20px;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-wrap:hover {
+  margin-top: -50px;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.img-wrap {
+  box-shadow: 0 10px 10px var(--secondary);
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  /* padding controls height, will always be perfectly square regardless of width */
+  position: relative;
+  opacity: 0.8;
+}
+
+.img-wrap img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* modal styles */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.backdrop img {
+  display: block;
+  max-width: 60%;
+  max-height: 80%;
+  margin: 60px auto;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+  border: 3px solid white;
+}
+
+.backdrop .likeButton {
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 500px) {
+  .img-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .img-grid p {
+    margin-top: 170px;
+  }
+}
